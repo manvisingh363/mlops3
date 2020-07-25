@@ -1,9 +1,9 @@
-final = open('/root/task/final.txt','r')
+final = open('/root/task/last.txt','r')
 initial = open('/root/task/initial.txt','r')
-accuracy = open('/root/task/accuracy.txt','r')
+accuracy = open('/root/task/acc.txt','r')
 
 #Read the final.txt file and splits it according to requirement as below.
-d = final.read()
+d = last.read()
 d = d.split('\n')
 
 old_a =float(d[0])  #initially i'l take old_accuracy that is stored in line1.
@@ -76,15 +76,15 @@ else:
 		i[line] =str(entered_data)
 		line+=1
 		i.append(str(entered_data))
-final.close()
+last.close()
 initial.close()	
 
-final=open('/root/task/final.txt','w')
+last=open('/root/task/last.txt','w')
 initial=open('/root/task/initial.txt','w')
 
 data_file_data = str(old_a) + '\n' + str(layer) + '\n' + str(line) + '\n' + str(entered_data) + '\n' + str(old_data) + '\n' + str(index_fc)			
-final.write(data_file_data)
-final.close()
+last.write(data_file_data)
+last.close()
 initial_file_data='\n'.join(i)
 initial.write(initial_file_data)
 initial.close()
